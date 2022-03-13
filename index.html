@@ -47,40 +47,7 @@
 
   <div id="hnext_notice">本ページの情報は<span></span>時点のものです。最新の配信状況はU-NEXTサイトにてご確認ください。</div>
 </div>
-<script src='//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'/>
-<script type='text/javascript'>
-(function(doc, win) {
-			var vc_pid = "887701117";
-			var id = 'ERROR';
-			var match = location.search.match(/(&|\?)id=(.*?)(&|$)/);
-			if(match) {
-				id = decodeURIComponent(match[2]);
-			}
-	        jQuery.ajax({
-	            url: "https://livdir.xsrv.jp/hcomic/wp-content/themes/hcomic/hnextitem.php",
-	            type: "post",
-	            dataType: "text",
-	            data:{'id':id}
-
-	        }).done(function (response) {
-	            var data= JSON.parse(response);
-	            jQuery("a.hnext_link").attr('href', data.link);
-	            jQuery("h1.entry-title").text('アダルト動画『' + data.title + '』が無料で観られる裏技！');
-	            jQuery("img#hnext_thumbnail_image").attr('src', data.thumbnail);
-	            jQuery("img#hnext_thumbnail_image").attr('data-src', data.thumbnail);
-	            jQuery("span#hnext_title").text(data.title);
-	            jQuery("span#hnext_desc").text(data.desc);
-	            jQuery("img#hnext_package_image").attr('src', data.package);
-	            jQuery("img#hnext_package_image").attr('data-src', data.package);
-	            jQuery("div#hnext_notice span").text(data.date);
-	            jQuery.getScript("//aml.valuecommerce.com/vcdal.js");
-			console.log('20220313');
-
-	        }).fail(function (xhr,textStatus,errorThrown) {
-	            console.log('error');
-	        });
-
-})(document, window);
-</script>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' defer/>
+<script src='//livdir.xsrv.jp/hcomic/wp-content/themes/hcomic/forgithub.css' defer/>
 </body>
 </html>
