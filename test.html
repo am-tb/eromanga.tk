@@ -10,8 +10,27 @@
 <div id="hnext_import">
 	<a href="https://lp.hnext.jp/title/AID0206523" class="hnext_link" rel="nofollow">31日間無料トライアル登録</a>
 </div>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'/>
 <script type="text/javascript" language="javascript">
     var vc_pid = "887701117";
-</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+</script>
+<script type='text/javascript'>
+(function(doc, win) {
+
+	        jQuery.ajax({
+	            url: "https://livdir.xsrv.jp/hcomic/wp-content/themes/hcomic/hnextitem.php",
+	            type: "post",
+	            dataType: "text"
+	        }).done(function (response) {
+
+	            jQuery.getScript("//aml.valuecommerce.com/vcdal.js");
+			console.log('20220313');
+
+	        }).fail(function (xhr,textStatus,errorThrown) {
+	            console.log('error');
+	        });
+
+})(document, window);
+</script>
 </body>
 </html>
